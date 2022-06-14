@@ -37,7 +37,6 @@ import javax.swing.ScrollPaneConstants;
 import java.awt.Window.Type;
 import java.awt.SystemColor;
 
-
 public class TrackRequest {
 
 	private JFrame frmRequestTracking;
@@ -63,6 +62,7 @@ public class TrackRequest {
 			}
 		});
 	}
+	
 	/**
 	 * Create the application.
 	 */
@@ -70,7 +70,6 @@ public class TrackRequest {
 		initialize();
 		Connect();
 		table_load();
-		
 	}
 	
 	//connect MySQL
@@ -218,7 +217,6 @@ public class TrackRequest {
 			public void keyReleased(KeyEvent e) {
 				
 				try {
-					
 					String id = txtid.getText();
 					pst = con.prepareStatement("select Date_of_Req, Desc_of_Req, Name_of_Tech, Notes from request_status where id = ?");
 					pst.setString(1, id);
@@ -333,6 +331,7 @@ public class TrackRequest {
 				txtid.requestFocus(); 
 			}
 		});
+		
 		//this button and action event deletes request selected
 		btnDelete_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -362,6 +361,7 @@ public class TrackRequest {
                 		}	
 			}
 		});
+		
 		//this button  and Action even updates
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -396,6 +396,7 @@ public class TrackRequest {
 						}
 			}
 		});
+		
 		//this button and action event exits program
 		JButton btnExit = new JButton("Exit");
 		btnExit.addActionListener(new ActionListener() {
